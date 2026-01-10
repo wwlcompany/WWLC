@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>World Wide Logistic • Профессиональная команда ETS2</title>
+  
+  <meta name="description" content="WWLC — дисциплинированная и стабильная команда в Euro Truck Simulator 2. Регулярные конвои, единый корпоративный стиль, полная поддержка участников."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #03050a;
+      --text: #f8fafc;
+      --text-light: #94a3b8;
+      --accent: #3b82f6;
+      --accent-dark: #1e40af;
+      --card: rgba(10, 15, 30, 0.78);
+      --border: rgba(255,255,255,0.07);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      background: 
+        linear-gradient(to bottom, rgba(3,5,10,0.92) 0%, rgba(3,5,10,0.87) 30%, rgba(3,5,10,0.80) 100%),
+        url('https://i.postimg.cc/mgPSZ6PX/bzer3paykdrmt0cvn5wvr4a9mc-result.gif') 
+        center/cover no-repeat fixed;
+      z-index: -2;
+    }
+
+    header {
+      padding: 300px 6% 240px;
+      text-align: center;
+    }
+
+    .logo-main {
+      font-size: clamp(9rem, 20vw, 15rem);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: #ffffff;
+      line-height: 0.82;
+      text-shadow: 0 20px 80px rgba(0,0,0,0.95);
+    }
+
+    .company-name {
+      font-size: clamp(2.8rem, 7.5vw, 4.8rem);
+      font-weight: 500;
+      color: var(--text-light);
+      margin: 32px 0 10px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+    }
+
+    .company-subname {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      font-weight: 500;
+      color: var(--text-light);
+      margin: -10px 0 20px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .hero-tag {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      max-width: 1200px;
+      margin: 0 auto;
+      font-weight: 300;
+      color: #e2e8f0;
+    }
+
+    .main-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 6%;
+    }
+
+    section {
+      margin: 260px 0;
+    }
+
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 2em;
+      color: #ffffff;
+      position: relative;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 180px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    .intro-block {
+      font-size: 1.45rem;
+      color: #cbd5e1;
+      max-width: 1100px;
+      margin: 0 auto 5em;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 56px;
+      margin: 140px 0;
+    }
+
+    .stat-card {
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 80px 60px;
+      text-align: center;
+      transition: all 0.45s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-18px);
+      border-color: var(--accent);
+    }
+
+    .stat-number {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 0.7em;
+    }
+
+    .stat-label {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 72px;
+      margin-top: 160px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 72px 64px;
+      transition: all 0.45s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-22px);
+      border-color: var(--accent);
+    }
+
+    .feature h3 {
+      font-size: 2.4rem;
+      margin-bottom: 1.5em;
+      color: #ffffff;
+    }
+
+    .feature p {
+      color: #94a3b8;
+      font-size: 1.22rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 200px 6%;
+      background: linear-gradient(to bottom, rgba(59,130,246,0.14), transparent);
+      border-radius: 36px;
+      margin: 200px 0;
+    }
+
+    .cta-title {
+      font-size: 4.4rem;
+      margin-bottom: 2em;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      margin-top: 90px;
+    }
+
+    .btn {
+      padding: 24px 76px;
+      font-size: 1.32rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 16px;
+      transition: all 0.45s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 320px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-7px);
+      box-shadow: 0 28px 70px rgba(59,130,246,0.55);
+    }
+
+    .btn-telegram {
+      background: #0088cc;
+      color: white;
+      border: 1px solid #0088cc;
+    }
+
+    .btn-telegram:hover {
+      background: #006699;
+      transform: translateY(-7px);
+      box-shadow: 0 28px 70px rgba(0,136,204,0.55);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: rgba(59,130,246,0.2);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 220px 6% 180px;
+      color: #64748b;
+      font-size: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 900px) {
+      header { padding: 220px 6% 180px; }
+      .logo-main { font-size: 11rem; }
+      h2 { font-size: 3.6rem; }
+      .stat-card, .feature { padding: 60px 40px; }
+      .btn { min-width: 280px; padding: 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+
+  <header>
+    <div class="logo-main">WWLC</div>
+    <div class="company-name">World Wide Logistic</div>
+    <div class="company-subname">Company</div>
+    <div class="hero-tag">
+      Профессиональная команда в Euro Truck Simulator 2<br>
+      Стабильные конвои по всей Европе • Единый корпоративный стиль • Полная поддержка на всех этапах
+    </div>
+  </header>
+
+  <div class="main-container">
+
+    <section>
+      <div class="intro-block">
+        <p>World Wide Logistic — это серьёзная, дисциплинированная команда с многолетним опытом в ETS2. Мы проводим регулярные конвои по всей карте игры.</p>
+        <p>У нас строгий единый стиль, чёткое расписание и система поддержки, которая помогает каждому участнику — от первого конвоя до лидерства в команде.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">+6</div>
+          <div class="stat-label">месяцев непрерывной деятельности</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">проведённых конвоев</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">~500к</div>
+          <div class="stat-label">километров общего пробега</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Как стать частью WWLC</h2>
+      
+      <div class="features-grid">
+        <div class="feature">
+          <h3>Единый корпоративный стиль</h3>
+          <p>Обязательный фирменный дизайн грузовиков и прицепов для всех официальных конвоев — мощный визуальный эффект и узнаваемость на трассе.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Поддержка 24/7 в Discord</h3>
+          <p>Подключение к конвою, советы по вождению, помощь в любых вопросах — наши ветераны всегда на связи и готовы помочь.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Регулярное расписание конвоев</h3>
+          <p>Несколько рейсов в неделю: короткие вечерние (2–4 часа) и масштабные выходные марафоны (10–16 часов) по живописным маршрутам.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Дружная и дисциплинированная команда</h3>
+          <p>Здесь ценят уважение на дороге, точность и командную работу — идеальное место для тех, кто хочет катать серьёзно.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2 class="cta-title">Готов ехать с нами по-настоящему?</h2>
+      <p style="font-size: 1.5rem; max-width: 900px; margin: 0 auto 5em; color: #e2e8f0;">
+        Присоединяйся к одной из самых стабильных команд ETS2, где дисциплина, качество и уважение к дороге — на первом месте.
+      </p>
+
+      <div class="action-buttons">
+        <a href="https://t.me/WWLC_Owner" target="_blank" class="btn btn-telegram">
+          Написать владельцу в Telegram
+        </a>
+        <a href="https://discord.gg/KqeaWY482f" target="_blank" class="btn btn-primary">
+          Вступить в Discord
+        </a>
+        <a href="https://disk.yandex.ru/d/Ysre7069K0qY5A" target="_blank" class="btn btn-outline">
+          Скачать готовый профиль
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025–2026 World Wide Logistic • Только серьёзный подход • Только качественные конвои
+  </footer>
+
+</body>
+</html>
